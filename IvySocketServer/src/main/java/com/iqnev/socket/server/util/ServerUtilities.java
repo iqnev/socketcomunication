@@ -13,22 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.iqnev.socket.server.core;
+package com.iqnev.socket.server.util;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Provides the ability to process messages.
- * 
  * @author Ivelin Yanev <bgfortran@gmail.com>
- * @since 2021-02-09
+ * @since 2021-02-09 
  *
  */
-public interface Operation {
-
-	/**
-	 * This method adds a message to the given queue.
-	 * 
-	 * @param msg the given message.
-	 */
-	public void addPackage(final String msg);
-
+public final class ServerUtilities {
+	private static final Logger log = LoggerFactory.getLogger(ServerUtilities.class);
+	
+	private ServerUtilities() {
+		throw new UnsupportedOperationException();
+	}
+	
+	public static void threadSleep(final int sleep) {
+		try {
+			Thread.sleep(sleep);
+		} catch (InterruptedException e) {
+			log.error("An InterruptedException exception occurred: {}", e);
+		}
+	}
 }

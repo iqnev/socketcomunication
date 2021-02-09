@@ -23,6 +23,9 @@ import org.slf4j.LoggerFactory;
 import com.iqnev.socket.server.app.App;
 
 /**
+ * The launcher class of the Socket server Application. Parsers the input
+ * arguments and runs the application.
+ * 
  * @author Ivelin Yanev <bgfortran@gmail.com>
  * @since 2021-02-07
  *
@@ -31,12 +34,10 @@ public class ServerAppLauncher {
 
 	private static final Logger log = LoggerFactory.getLogger(ServerAppLauncher.class);
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-	/*	if (args.length < 1) {
-			printAppHelp();
+
+		if (args.length < 1) {
+			log.error("Invalid Arguments");
 			System.exit(1);
 		}
 
@@ -45,8 +46,6 @@ public class ServerAppLauncher {
 			port = Integer.parseInt(args[0]);
 		} catch (NumberFormatException nException) {
 			log.error("\"Invalid listen port value: {}", args[1]);
-
-			printAppHelp();
 			System.exit(1);
 		}
 
@@ -55,12 +54,15 @@ public class ServerAppLauncher {
 			log.error("Port value must be in (0, 65535].");
 			System.exit(1);
 		}
-*/
-		start(args);
+
+		start(port);
 
 	}
 
-	private static void start(String[] args) {
+	private static void start(final int port) {
+		final App app = App.getInstance();
+		/** change the name of the thread */
+		Thread.currentThread().setName("Socket Server");
 
 		Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 
@@ -68,21 +70,12 @@ public class ServerAppLauncher {
 			public void uncaughtException(Thread t, Throwable e) {
 				log.error("Unrecoverable error, exiting: {}", e);
 				return;
-
+				//TODO: restart ThreadPollSerevr
 			}
 
 		});
 
-		// change the name of the thread
-		Thread.currentThread().setName("Socket Server");
-
-		final App app = App.getInstance();
-		app.launch(3333);
-	}
-
-	private static void printAppHelp() {
-		System.out.println("######## Invalid Arguments ##########");
-
+		app.launch(port);
 	}
 
 }
