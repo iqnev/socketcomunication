@@ -13,6 +13,13 @@ The server is Java based console application.  Тhere is an implemented message 
 
 The UML diagram in the figure below shows how the main components of the software interact.
 
+[![UML](https://github.com/iqnev/socketcomunication/blob/master/resources/UML_diagram.jpg "UML")](https://github.com/iqnev/socketcomunication/blob/master/resources/UML_diagram.jpg "UML")
+
+
+UML Sequence Diagrams are interaction diagrams that detail how operations are carried out
+
+[![UML Sequence](https://github.com/iqnev/socketcomunication/blob/master/resources/SequenceDiagram.png "UML Sequence")](https://github.com/iqnev/socketcomunication/blob/master/resources/SequenceDiagram.png "UML Sequence")
+
 ##### Client
 I mentioned above that the Client is based on Qt and there is a GUI.
 
