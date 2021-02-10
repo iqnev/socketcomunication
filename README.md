@@ -7,5 +7,35 @@ A server listens for connection requests from clients across the network or even
 
 ###  Design
 The overall design of the program was split up into two components, one for the server and one for the client. These two components interact with each other using a socket. 
+
 ##### Server
 The server is Java based console application.  Тhere is an implemented message generator on the server side. For each client that is connected to the server corresponds to a message queue. Thus, each message is stored in a separate queue. This ensures that each message will be sent to the relevant client.
+
+The UML diagram in the figure below shows how the main components of the software interact.
+
+##### Client
+I mentioned above that the Client is based on Qt and there is a GUI.
+
+
+------------
+
+###Usage
+
+
+
+------------
+
+###Requirements
+
+------------
+
+###Development status
+
+------------
+
+###License
+This project is licensed under the Apache License 2.0. Check out the license text inside the `LICENSE` file.
+
+------------
+
+###TODO:
