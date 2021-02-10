@@ -19,23 +19,24 @@ I mentioned above that the Client is based on Qt and there is a GUI.
 
 ------------
 
-###Usage
+### Usage
 
 
 
 ------------
 
-###Requirements
+
+### Requirements
 
 ------------
 
-###Development status
+### Development status
 
 ------------
 
-###License
+### License
 This project is licensed under the Apache License 2.0. Check out the license text inside the `LICENSE` file.
 
 ------------
 
-###TODO:
+### TODO:
