@@ -35,7 +35,8 @@ public class DataGenerator implements Runnable {
 	private static final int THREAD_SLEEP = 9000;
 
 	private static final Logger log = LoggerFactory.getLogger(DataGenerator.class);
-
+	
+	private volatile boolean keepRunning = true;
 	private volatile List<Operation> clients;
 	private static int COUNTER;
 
@@ -51,7 +52,7 @@ public class DataGenerator implements Runnable {
 	@Override
 	public void run() {
 
-		while (true) {
+		while (keepRunning) {
 			if (!clients.isEmpty()) {
 				final String currentMsg = sendMsg().toJSONString();
 				for (Operation operation : clients) {
@@ -64,6 +65,10 @@ public class DataGenerator implements Runnable {
 			ServerUtilities.threadSleep(THREAD_SLEEP);
 		}
 
+	}
+	
+	public void shutdown() {
+		keepRunning = false;
 	}
 
 	@SuppressWarnings("unchecked")

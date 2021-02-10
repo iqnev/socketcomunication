@@ -45,7 +45,7 @@ public class ClientHandler implements Runnable, Operation {
 	/** The socket connected to the client. */
 	private final Socket clientSock;
 	/** An queue to keep the list of the messages */
-	private BlockingQueue<String> queue;
+	private final BlockingQueue<String> queue;
 	/** to check if server is running */
 	private boolean keepRunning = true;
 

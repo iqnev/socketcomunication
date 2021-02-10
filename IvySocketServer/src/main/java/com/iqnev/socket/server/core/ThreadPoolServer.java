@@ -100,6 +100,8 @@ public class ThreadPoolServer {
 	/** Shuts down this server */
 	protected void shutdown() {
 		log.info("Shutting down the server.");
+		dGenerator.shutdown();
+		
 		for (ClientHandler clientHandler : listClients) {
 			clientHandler.shutdown();
 		}
@@ -108,7 +110,8 @@ public class ThreadPoolServer {
 		} catch (IOException e) {
 			log.error("Exception occurred when closing the socket:", e);
 		}
-
+		
+		
 		threadPool.shutdownNow();
 	}
 
