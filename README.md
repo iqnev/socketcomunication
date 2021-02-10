@@ -28,6 +28,21 @@ I mentioned above that the Client is based on Qt and there is a GUI.
 
 ### Usage
 
+The Server application can be packaged using:
+```
+mvn clean install
+```
+It produces the server-0.0.1-SNAPSHOT-jar-with-dependencies.jar file in the /target directory
+Start the server by running the following command:
+```java
+java -jar server.jar <port number>
+```
+
+In order to build the Client application you can use Qt editor. Also there is deployment tool for Windows or Unix systems and etc. It is designed to automate the process of creating a deployable folder containing the Qt-related dependencies (libraries, QML imports, plugins, and translations) required to run the application from that folder. [Deploying Qt Applications](https://doc.qt.io/qt-5/deployment.html "Deploying Qt Applications")
+
+
+The client applications in action:
+[![Clients](https://github.com/iqnev/socketcomunication/blob/master/resources/Qt_socket_client.JPG "Clients")](https://github.com/iqnev/socketcomunication/blob/master/resources/Qt_socket_client.JPG "Clients")
 
 
 ------------
