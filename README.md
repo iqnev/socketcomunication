@@ -42,6 +42,8 @@ The project has the following  requirements:
 
 ### Development status
 
+Current released version: **0.0.1(pre-alpha)**
+
 ------------
 
 ### License
