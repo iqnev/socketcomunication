@@ -35,8 +35,8 @@ I mentioned above that the Client is based on Qt and there is a GUI.
 
 ### Requirements
 The project has the following  requirements:
-- Java 8 or above
-- Maven
+- Java Open JDK version 8 or Oracle jdk
+- Maven version 2 or 3
 - Qt 5.14.2
 ------------
 
