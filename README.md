@@ -67,3 +67,8 @@ This project is licensed under the Apache License 2.0. Check out the license tex
 ------------
 
 ### TODO:
+
+- Creation of unit and performance  tests for the Service and Client app¶
+- Restart the Server  if a problem occurs
+- Creation of complete technical documentation
+- Fix potential existing problems
